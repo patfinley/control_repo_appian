@@ -1,0 +1,9 @@
+[Uniti]
+Description=Run the pasture service
+
+[Service]
+Environment=RACK_ENV=production
+ExecStart=/usr/local/bin/pasture start
+
+[Install]
+WantedBy=multi-user.target

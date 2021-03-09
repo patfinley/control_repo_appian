@@ -1,0 +1,4 @@
+<%- | $appian_version,
+| -%>
+# This file is managed by Puppet please do not make any changes
+Database name: $appian_version

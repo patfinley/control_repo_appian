@@ -1,0 +1,5 @@
+<%- | $database_name_result,
+| -%>
+# This file is managed by Puppet please do not make any changes
+:datase_name_result: <%= $database_name_result %>
+

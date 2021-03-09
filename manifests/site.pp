@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## site.pp ##
 
 # This file (/etc/puppetlabs/puppet/manifests/site.pp) is the main entry point
@@ -62,4 +63,8 @@ node /^pasture-db/ {
 }
 node 'pasture.puppet.vm'{
   include profile::appian::app
+=======
+node default{
+ 
+>>>>>>> a46e960a44494aec21e2868de82330eadfe3f8cd
 }

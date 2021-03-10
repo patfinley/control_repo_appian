@@ -22,7 +22,7 @@ class  appian (
     'company_domain'    => $company_domain,
     
 } 
- file{ '/etc/cusotm.properties':
+ file{ '/etc/custom.properties':
    content => epp('appian/custom.properties.epp', $appian_properties_hash)
   }
 

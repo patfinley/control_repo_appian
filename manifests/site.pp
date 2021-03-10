@@ -63,8 +63,5 @@ node /^pasture-db/ {
 }
 node 'pasture.puppet.vm'{
   include profile::appian::app
+  }
 =======
-node default{
- 
->>>>>>> a46e960a44494aec21e2868de82330eadfe3f8cd
-}

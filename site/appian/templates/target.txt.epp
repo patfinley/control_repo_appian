@@ -1,9 +1,10 @@
-<%- |  $database_name,
+<%- |  $database_nickname
+       $database_name,
        $username,
        $password,      
  | -%>
 # This file is managed by Puppet please do not make any changes
-  <Resource name="jdbc/AppianDS"
+  <Resource name="<%= $database_nickname %>"
     factory="com.appiancorp.tomcat.datasource.EncodedPasswordDataSourceFactory"
     type="javax.sql.DataSource"
     driverClassName="com.mysql.jdbc.Driver"

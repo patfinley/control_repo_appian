@@ -1,7 +1,7 @@
 ---
 profile::appian::app::database_nickname: "jb/AppianDB"
 profile::appian::app::database_name: "appian_203"
-profile::appian::app::username: "pat.finley"
-profile::appian::app::password: "password55"
-profile::appian::app::company_domain: "appiancorp.com"
+profile::appian::app::username: "admin.user"
+profile::appian::app::password: "he$$o"
+profile::appian::app::company_domain: "turbotax.com"
 

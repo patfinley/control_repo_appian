@@ -41,7 +41,7 @@ conf.suite.SCHEME=http
 ## three server values must use different domains.
 ## This is the hostname and port portion of the URL viewed by end users (e.g.,
 ## in a browser, links in emails)
-conf.suite.SERVER_AND_PORT=<%= $fqdn %>.<%= company_domain %>:8080
+conf.suite.SERVER_AND_PORT=<%= $fqdn %>.<%= $company_domain %>:8080
 ## This is the hostname and port portion of the URL used to serve user-uploaded
 ## content (e.g., documents)
 #conf.suite.STATIC_SERVER_AND_PORT=<PROVIDE A VALUE>:8080

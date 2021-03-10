@@ -5,6 +5,6 @@ node default {
   #   class { 'my_class': }
 }
 
-node 'pasture.puppet.vm'{
+node 'pasture.puppet.vm' {
   include profile::appian::app
 }

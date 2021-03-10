@@ -13,8 +13,8 @@ class  appian (
 }
 
  file{ '/etc/target.txt':
-   content => epp('appian/target.txt.epp', $appian_source_hash)
-   before  => File['/etc/custom.properties']  
+   content => epp('appian/target.txt.epp', $appian_source_hash),
+   before  => File['/etc/custom.properties'],
   }
   $appian_source_hash = {
     'database_nickname' => $database_nickname,

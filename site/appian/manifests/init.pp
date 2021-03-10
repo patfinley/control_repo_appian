@@ -3,6 +3,7 @@ class  appian (
   $database_name         = 'appian_203',
   $username              = 'admin',
   $password              = 'password',
+  $company_domain        = 'appiancorp.com',
 )
 {
    $appian_source_hash = {

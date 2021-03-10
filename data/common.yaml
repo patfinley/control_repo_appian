@@ -1,4 +1,7 @@
 ---
+profile::appian::app::database_nickname: "jb/AppianDB"
 profile::appian::app::database_name: "appian_203"
 profile::appian::app::username: "pat.finley"
 profile::appian::app::password: "password55"
+profile::appian::app::company_domain: "appiancorp.com"
+

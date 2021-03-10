@@ -16,7 +16,7 @@ class  appian (
    content => epp('appian/target.txt.epp', $appian_source_hash),
    before  => File['/etc/custom.properties'],
   }
-  $appian_source_hash = {
+  $appian_properties_hash = {
     'database_nickname' => $database_nickname,
     'fqdn'              => $facts['networking']['fqdn'],
     'company_domain'    => $company_domain,

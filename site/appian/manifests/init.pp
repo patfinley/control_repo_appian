@@ -7,6 +7,7 @@ class  appian (
   $directory_appian_home = '/usr/local/appian203/appian',
   $directory_appian_repo = '/usr/local/appian203/repo/appian',
   $directory_appian_backup = '/usr/local/appian203/backup/appian',
+  $environment             = 'example',
 )
 {
    $appian_source_hash = {
@@ -16,7 +17,7 @@ class  appian (
     'password'          => $password,
 }
 
- file{ '${direcotory_appian_home}/conf/tomcatResources.xml':
+ file{ '${direcotory_appian_home}/conf/tomcatResources.xml.${environment}':
    content => epp('appian/target.txt.epp', $appian_source_hash),
   }
   $appian_properties_hash = {
@@ -25,7 +26,7 @@ class  appian (
     'company_domain'    => $company_domain,
     
 } 
- file{ '${direcotory_appian_home}/conf/custom.properties':
+ file{ '${direcotory_appian_home}/conf/custom.properties.${environment}':
    content => epp('appian/custom.properties.epp', $appian_properties_hash),
    require  => File['${direcotory_appian_home}/conf/tomcatResources.xml'],
   }

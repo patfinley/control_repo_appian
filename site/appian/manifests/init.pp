@@ -4,12 +4,11 @@ class  appian (
   $username              = 'admin',
   $password              = 'password',
   $company_domain        = 'appiancorp.com',
+  $directory_appian_home = '/usr/local/appian203/appian',
+  $directory_appian_repo = '/usr/local/appian203/repo/appian',
+  $directory_appian_backup = '/usr/local/appian203/backup/appian',
 )
 {
- file{ '/usr/local/appian/conf':
-   ensure => directory,
-   mode   => '0755',
-  }
    $appian_source_hash = {
     'database_nickname' => $database_nickname,
     'database_name'     => $database_name,
@@ -17,9 +16,8 @@ class  appian (
     'password'          => $password,
 }
 
- file{ '/usr/local/appian/conf/tomcatResources.xml':
+ file{ '${direcotory_appian_home}/conf/tomcatResources.xml':
    content => epp('appian/target.txt.epp', $appian_source_hash),
-   require  => File['/usr/local/appian/conf'],
   }
   $appian_properties_hash = {
     'database_nickname' => $database_nickname,
@@ -27,9 +25,9 @@ class  appian (
     'company_domain'    => $company_domain,
     
 } 
- file{ '/usr/local/appian/conf/custom.properties':
+ file{ '${direcotory_appian_home}/conf/custom.properties':
    content => epp('appian/custom.properties.epp', $appian_properties_hash),
-   require  => File['/usr/local/appian/conf/tomcatResources.xml'],
+   require  => File['${direcotory_appian_home}/conf/tomcatResources.xml'],
   }
 
 

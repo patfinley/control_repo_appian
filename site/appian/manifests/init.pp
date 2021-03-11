@@ -8,7 +8,7 @@ class  appian (
 {
  file{ '/usr/local/appian/conf':
    ensure => directory,
-   mode   => 0755,
+   mode   => '0755',
   }
    $appian_source_hash = {
     'database_nickname' => $database_nickname,

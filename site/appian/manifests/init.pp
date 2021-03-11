@@ -6,6 +6,10 @@ class  appian (
   $company_domain        = 'appiancorp.com',
 )
 {
+ file{ '/usr/local/appian/conf':
+   ensure => directory,
+   mode   => 0755,
+  }
    $appian_source_hash = {
     'database_nickname' => $database_nickname,
     'database_name'     => $database_name,
@@ -13,9 +17,9 @@ class  appian (
     'password'          => $password,
 }
 
- file{ '/etc/target.txt':
+ file{ '/usr/local/appian/conf/tomcatResources.xml':
    content => epp('appian/target.txt.epp', $appian_source_hash),
-   before  => File['/etc/custom.properties'],
+   require  => File['/usr/local/appian/conf'],
   }
   $appian_properties_hash = {
     'database_nickname' => $database_nickname,
@@ -23,8 +27,9 @@ class  appian (
     'company_domain'    => $company_domain,
     
 } 
- file{ '/etc/custom.properties':
-   content => epp('appian/custom.properties.epp', $appian_properties_hash)
+ file{ '/usr/local/appian/conf/custom.properties':
+   content => epp('appian/custom.properties.epp', $appian_properties_hash),
+   require  => File['/usr/local/appian/conf/tomcatResources.xml'],
   }
 
 

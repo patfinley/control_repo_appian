@@ -4,4 +4,7 @@ profile::appian::app::database_name: "appian_203"
 profile::appian::app::username: "admin.user"
 profile::appian::app::password: "he$$o"
 profile::appian::app::company_domain: "turbotax.com"
+profile::appian::app::directory_appian_home: "/usr/local/appian203/appian"
+profile::appian::app::directory_appian_repo: "/usr/local/appian203/repo/appian"
+profile::appian::app::directory_appian_backup: "/usr/local/appian203/backup/appian"
 

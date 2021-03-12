@@ -1,0 +1,9 @@
+
+---
+:cachedir: '/var/cache/r10k'
+# Change remote value to match your specfic git repo URL for your Puppet Project
+# basedir variable is the directory where the pulled git directory will be stored to
+:sources:
+  :my-org:
+    remote: 'https://github.com/patfinley/control_repo_appian.git'
+    basedir: '/etc/puppetlabs/code/environments'
